@@ -1,0 +1,19 @@
+# Virtual environment
+med_venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files 
+models/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
