@@ -4,16 +4,22 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 import torch
 
 # Define model path
-MODEL_PATH = "./models/t5-small-radiology-final"
+MODEL_PATH = "aptable/medical-radiology-summarizer"
 
 # Detect Device
 device = torch.device("cuba" if torch.cuda.is_available() else "cpu")
+
+print("Starting app...")
+print(f"Loading model from: {MODEL_PATH}")
+
 
 # Load tokenizer and model
 tokenizer = T5Tokenizer.from_pretrained(MODEL_PATH)
 model = T5ForConditionalGeneration.from_pretrained(MODEL_PATH)
 model.to(device)
 model.eval()
+
+print("Model loaded successfully")
 
 app = FastAPI(
     title="Summarising Medical Text - Radiology",
